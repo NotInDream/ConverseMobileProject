@@ -1,3 +1,4 @@
+import 'package:converse_project/pages/auth_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -55,7 +56,7 @@ class IntroPage extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => AuthPage(),
                     ),
                   ),
                   child: Container(
