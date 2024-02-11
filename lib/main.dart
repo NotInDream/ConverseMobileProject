@@ -1,11 +1,9 @@
 import 'package:converse_project/pages/auth_page.dart';
-import 'package:converse_project/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'models/cart.dart';
-import 'pages/intro_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
       create: (context) => Cart(),
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: IntroPage(),
+        home: AuthPage(),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/shoe.dart';
 
+// ignore: must_be_immutable
 class ShoeTile extends StatelessWidget {
   Shoe shoe;
   void Function()? onTap;
@@ -14,7 +15,7 @@ class ShoeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 25),
+      margin: const EdgeInsets.only(left: 25),
       width: 280,
       decoration: BoxDecoration(
         color: Colors.grey[100],
@@ -31,7 +32,7 @@ class ShoeTile extends StatelessWidget {
         //desc
         Text(
           shoe.desc,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.grey,
           ),
         ),
@@ -48,14 +49,15 @@ class ShoeTile extends StatelessWidget {
                   // shoe nama
                   Text(
                     shoe.nama,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   const SizedBox(height: 1),
 
                   // shoe price
                   Text(
                     shoe.harga,
-                    style: TextStyle(color: Colors.grey),
+                    style: const TextStyle(color: Colors.grey),
                   )
                 ],
               ),
@@ -63,13 +65,13 @@ class ShoeTile extends StatelessWidget {
               GestureDetector(
                 onTap: onTap,
                 child: Container(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     decoration: const BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(12),
                             bottomRight: Radius.circular(12))),
-                    child: Icon(
+                    child: const Icon(
                       Icons.add,
                       color: Colors.white,
                     )),

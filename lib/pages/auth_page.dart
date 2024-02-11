@@ -1,7 +1,5 @@
-import 'package:converse_project/pages/home_page.dart';
-import 'package:converse_project/pages/intro_page.dart';
 import 'package:converse_project/pages/login_or_register.dart';
-import 'package:converse_project/pages/login_page.dart';
+import 'package:converse_project/pages/main_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +14,7 @@ class AuthPage extends StatelessWidget {
           builder: (context, snapshot) {
             // user is logged in
             if (snapshot.hasData) {
-              return HomePage();
+              return MainPages();
             }
             // user not login
             else {

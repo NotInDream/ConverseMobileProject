@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/cart.dart';
 import '../models/shoe.dart';
 
+// ignore: must_be_immutable
 class CartItem extends StatefulWidget {
   Shoe shoe;
   CartItem({
@@ -27,13 +28,13 @@ class _CartItemState extends State<CartItem> {
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(8),
       ),
-      margin: EdgeInsets.only(bottom: 5),
+      margin: const EdgeInsets.only(bottom: 5),
       child: ListTile(
         leading: Image.asset(widget.shoe.imagePath),
         title: Text(widget.shoe.nama),
         subtitle: Text(widget.shoe.harga),
         trailing: IconButton(
-          icon: Icon(Icons.delete),
+          icon: const Icon(Icons.delete),
           onPressed: removeItemFromCart,
         ),
       ),

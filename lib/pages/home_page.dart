@@ -1,5 +1,4 @@
 import 'package:converse_project/components/bottom_nav_bar.dart';
-import 'package:converse_project/pages/about_page.dart';
 import 'package:converse_project/pages/cart_page.dart';
 import 'package:converse_project/pages/shop_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +6,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Function()? onTap;
+  const HomePage({super.key, required this.onTap});
+  //const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -83,8 +84,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 //other page
                 GestureDetector(
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage())),
+                  onTap: widget.onTap,
                   child: Container(
                     child: const Padding(
                       padding: const EdgeInsets.only(left: 25.0),
@@ -102,8 +102,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AboutPage())),
+                  onTap: widget.onTap,
                   child: Container(
                     child: const Padding(
                       padding: const EdgeInsets.only(left: 25.0),
